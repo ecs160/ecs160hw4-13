@@ -144,6 +144,8 @@ int main(int argc, char** argv)
             strcpy(line, test);
         }
         if(countC(line) != fields - 1){//line does not have enough fields
+            if(line[0]=='\n' || line[0]=='\r')
+                continue;
             printf("Invalid Input Format\n");
             exit(8);
         }
